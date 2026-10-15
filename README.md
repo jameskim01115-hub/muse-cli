@@ -13,9 +13,9 @@ Talk to your personal muse.ai AI agent from the terminal.
 [![GitHub stars](https://img.shields.io/github/stars/nikships/muse-cli?style=for-the-badge)](https://github.com/nikships/muse-cli/stargazers)
 [![Website](https://img.shields.io/badge/website-live-3fb950?style=for-the-badge)](https://muse-cli-site.web.app)
 
-![muse-cli hero](https://raw.githubusercontent.com/nikships/muse-cli/main/assets/hero.webp)
-
 </div>
+
+https://github.com/user-attachments/assets/8c9aefe8-c5a4-4e4b-9393-48e2325f99a9
 
 ## What is this?
 
@@ -182,6 +182,7 @@ muse-cli status
 ## Usage
 
 ```bash
+muse-cli                                          # interactive chat (same as `muse-cli chat`)
 muse-cli threads                                  # main chat + side chats
 muse-cli history --limit 5                        # recent messages
 muse-cli history --thread <session-id> --limit 5  # one side chat
@@ -202,7 +203,11 @@ muse-cli wake
 muse-cli raw <method> --body '{}'                 # escape hatch: any of 258 gateway methods
 ```
 
-Every command prints JSON. Your VM is auto-discovered from your session, and a
+The interactive chat prints plain text, one message per line, so it works well
+with screen readers. It resumes the conversation you used last; type `/help`
+inside it for `/chats`, `/open N`, `/main`, `/new`, `/history`, and `/login`.
+
+Every other command prints JSON. Your VM is auto-discovered from your session, and a
 random device id is generated on first run.
 
 Pipe it into other tools:
